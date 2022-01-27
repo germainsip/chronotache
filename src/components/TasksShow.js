@@ -28,7 +28,7 @@ class TasksShow extends Component {
           <i className="material-icons circle green">grade</i>
           <p className="title">{activeTask.task}</p>
           <p
-          >{`Total Time: ${moment
+          >{`Temps Total: ${moment
             .duration(activeTask.totalTime, "seconds")
             .format("hh:mm:ss", { trim: false })}`}</p>
         </li>
@@ -52,7 +52,7 @@ class TasksShow extends Component {
           </i>
           <p className="title">{task.task}</p>
           <p
-          >{`Total Time: ${moment
+          >{`Temps Total: ${moment
             .duration(task.totalTime, "seconds")
             .format("hh:mm:ss", { trim: false })}`}</p>
           <i
@@ -75,7 +75,7 @@ class TasksShow extends Component {
             <form onSubmit={this.handleSubmit}>
               <input
                 type="text"
-                placeholder="Add a task"
+                placeholder="Ajouter une tâche"
                 value={this.state.task}
                 onChange={e => this.setState({ task: e.target.value })}
               />
