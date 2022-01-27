@@ -1,0 +1,15 @@
+{
+  "name": "chronotache",
+  "version": "1.0.0",
+  "main": "index.js",
+  "source": "index.html",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "devDependencies": {
+    "parcel": "^2.2.1"
+  }
+}
