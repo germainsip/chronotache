@@ -6,7 +6,7 @@ class TasksIndex extends Component {
       return (
         <div style={styles.buttonContainer}>
           <button className="btn red" onClick={() => this.props.onTimerStop()}>
-            Stop Timer
+            Stopper
           </button>
         </div>
       );
@@ -19,13 +19,13 @@ class TasksIndex extends Component {
           className="btn green"
           onClick={() => this.props.onTimerStart()}
         >
-          Start Timer
+          Démarrer
         </button>
         <button
           className="btn"
           onClick={() => this.props.onTaskDeactivate(this.props.activeTask)}
         >
-          Deactivate Task
+          Désactiver la tâche
         </button>
       </div>
     );
@@ -38,7 +38,7 @@ class TasksIndex extends Component {
       return (
         <div style={styles.container}>
           <h3>
-            No Active tasks.
+            Pas de Tâches Actives.
           </h3>
         </div>
       );
@@ -46,8 +46,8 @@ class TasksIndex extends Component {
 
     return (
       <div style={styles.container}>
-        <h2>{`Time Left ${timer.display}`}</h2>
-        <h4>{`Current Task: ${activeTask.task}`}</h4>
+        <h2>{`Temps restant: ${timer.display}`}</h2>
+        <h4>{`Tâche courante: ${activeTask.task}`}</h4>
         {this.renderActionButtons()}
       </div>
     );
