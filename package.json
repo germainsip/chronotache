@@ -9,7 +9,7 @@
     "react-build": "parcel build"
   },
   "devDependencies": {
-    "parcel": "^2.2.1",
+    "parcel": "^2.2.1"
   },
   "dependencies": {
     "moment": "^2.29.1",
