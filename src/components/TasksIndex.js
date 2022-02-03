@@ -38,7 +38,7 @@ class TasksIndex extends Component {
       return (
         <div style={styles.container}>
           <h3>
-            Pas de Tâche actives.
+            Pas de Tâches actives.
           </h3>
         </div>
       );
