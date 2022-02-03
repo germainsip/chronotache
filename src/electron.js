@@ -13,6 +13,7 @@ function createWindow() {
     height: 600,
     frame: false,
     resizable: false,
+    show: false,
   });
   mainWindow.loadURL(
     isDev
@@ -25,11 +26,30 @@ function createWindow() {
     process.platform === "win32" ? "windows-icon.png" : "task.png";
   const iconPath = path.join(__dirname, `./assets/${iconName}`);
   tray = new Tray(iconPath);
+  console.log(mainWindow.isVisible());
+  tray.on("click", (event, bounds) => {
+    // positionnement du click
+    const { x, y } = bounds;
+    // on récupère les dimensions de la fenêtre
+    const { width, height } = mainWindow.getBounds();
+    if (mainWindow.isVisible()) {
+      mainWindow.hide();
+    } else {
+      const yPosition = process.platform === 'darwin' ? y : y - height;
+      mainWindow.setBounds({
+        x: x - width/2,
+        y: yPosition,
+        width,
+        height
+      });
+      mainWindow.show();
+
+    }
+  });
 }
 
 app.on("ready", () => {
   createWindow();
-  //tray = new Tray(path.join(__dirname, `./assets/iconTemplate.png`));
 });
 
 app.on("window-all-closed", () => {
